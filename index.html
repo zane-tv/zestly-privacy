@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy policy — Zestly</title>
+    <meta
+      name="description"
+      content="Privacy policy for Zestly, a browser extension by Zane Dev."
+    />
+    <link rel="canonical" href="https://zane-tv.github.io/zestly-privacy/" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0f0d0d;
+        --surface: #171615;
+        --text: #ffffff;
+        --secondary: #d1cecc;
+        --muted: #a5a2a0;
+        --line: rgb(255 255 255 / 12%);
+        --accent: #fe2c02;
+        --font-display: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+        --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--secondary);
+        font-family: var(--font-sans);
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      a { color: var(--text); text-underline-offset: 3px; }
+      a:hover { color: var(--accent); }
+
+      header, main, footer {
+        width: min(720px, calc(100% - 40px));
+        margin-inline: auto;
+      }
+
+      header {
+        padding: 48px 0 28px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .mark {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--text);
+        font-family: var(--font-display);
+        font-size: clamp(40px, 7vw, 64px);
+        font-weight: 300;
+        letter-spacing: -0.03em;
+        line-height: 1.05;
+      }
+
+      .byline {
+        margin: 16px 0 0;
+        color: var(--text);
+        font-size: 15px;
+      }
+
+      .byline strong { font-weight: 500; }
+
+      .updated {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      main { padding: 36px 0 64px; }
+
+      h2 {
+        margin: 36px 0 10px;
+        color: var(--text);
+        font-family: var(--font-display);
+        font-size: 28px;
+        font-weight: 300;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      p { margin: 0 0 14px; }
+
+      ul {
+        margin: 0 0 14px;
+        padding-left: 1.15em;
+      }
+
+      li { margin: 0 0 12px; }
+      li strong { color: var(--text); font-weight: 500; }
+
+      footer {
+        padding: 22px 0 48px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p class="mark">Zestly</p>
+      <h1>Privacy policy</h1>
+      <p class="byline">Browser extension by <strong>Zane Dev</strong></p>
+      <p class="updated">Last updated: 3 November 2026</p>
+    </header>
+    <main>
+      <p>
+        Zestly handles only the data needed to recognize and translate text,
+        speech, and pages. It does not collect analytics, sell user data, or
+        use user data for advertising. Zane Dev, the extension author, does
+        not receive the text, images, or audio the extension processes.
+      </p>
+
+      <h2>Data handled on the device</h2>
+      <ul>
+        <li>
+          <strong>Selected images and screen regions.</strong>
+          Images are processed locally by the OCR engine and are not uploaded.
+          Up to eight recent captures may be stored locally for overlays and
+          re-recognition. Captures expire after 30 minutes and are deleted the
+          next time the extension performs its local cleanup. Live translation
+          keeps no captures. It reads each frame in memory and discards it.
+        </li>
+        <li>
+          <strong>Microphone and tab audio.</strong>
+          When a local speech model is selected, audio is transcribed on the
+          device and is not uploaded. Optional speech models are downloaded
+          from Hugging Face only when the user asks for them.
+        </li>
+        <li>
+          <strong>Notebook sessions.</strong>
+          Saved transcripts stay in the browser's local extension storage,
+          limited to 40 sessions and 500 lines each, until the user deletes
+          them or uninstalls the extension.
+        </li>
+        <li>
+          <strong>Settings and API keys.</strong>
+          Preferences and API keys are stored in the browser's local extension
+          storage. An API key is sent only to the endpoint the user configured,
+          and only when that endpoint is used.
+        </li>
+      </ul>
+
+      <h2>Data sent to a service the user selects</h2>
+      <ul>
+        <li>
+          <strong>Recognized or transcribed text.</strong>
+          Text is sent to the translation provider the user selected. That is
+          Google Translate, or an OpenAI-compatible endpoint the user
+          configured. During live translation, text from the selected region
+          is sent when it changes, until live translation is stopped. A
+          configured language-model endpoint may also receive the few lines
+          before the current line, as context.
+        </li>
+        <li>
+          <strong>Cloud transcription audio.</strong>
+          If the user selects a cloud speech model, the audio clip is sent to
+          the transcription endpoint the user configured. It is not sent when a
+          local model is selected.
+        </li>
+        <li>
+          <strong>Read-aloud text.</strong>
+          Text is sent to Google text-to-speech only when the user requests
+          read-aloud.
+        </li>
+      </ul>
+      <p>
+        Google, Hugging Face, and any user-configured service process data
+        under their own privacy policies.
+      </p>
+
+      <h2>Retention and deletion</h2>
+      <p>
+        Settings remain on the device until the user changes them, clears the
+        extension's data, or uninstalls the extension. Temporary captures
+        expire after 30 minutes and are also limited to the eight most recent
+        captures. Uninstalling the extension removes its locally stored data.
+      </p>
+
+      <h2>Limited use</h2>
+      <p>
+        Data handled by the extension is used only to provide OCR, translation,
+        speech, and text-to-speech features. It is not sold, used for
+        advertising, used to determine creditworthiness, or transferred for
+        unrelated purposes.
+      </p>
+      <p>
+        The use of information received from Google APIs adheres to the
+        <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use">Chrome Web Store User Data Policy</a>,
+        including the Limited Use requirements.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Author: Zane Dev. For privacy questions, open an issue in the
+        <a href="https://github.com/zane-tv/zestly/issues">project repository</a>.
+        Issues are public, so do not include personal or sensitive information.
+      </p>
+    </main>
+    <footer>
+      <p>
+        Zestly by Zane Dev ·
+        <a href="https://github.com/zane-tv/zestly">Source</a>
+        · Mozilla Public License 2.0
+      </p>
+    </footer>
+  </body>
+</html>
